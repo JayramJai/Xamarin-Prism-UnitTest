@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieReview.Views.DetailPage"
+             Title="Movie Details"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <AbsoluteLayout x:Name="ViewLayout" HeightRequest="500">
+                <Image Source="{Binding FullContent.Poster}" Aspect="Fill" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" />
+                <AbsoluteLayout x:Name="ViewControls" VerticalOptions="End" AbsoluteLayout.LayoutBounds="1,1,1,.5" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Margin="10,10,10,15">
+                    <Label Text="{Binding FullContent.Title}" FontSize="22" FontAttributes="Bold" TextColor="GhostWhite"/>
+                </AbsoluteLayout>
+            </AbsoluteLayout>
+
+            <StackLayout Padding="8" Orientation="Vertical" Spacing="8">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                    <StackLayout Orientation="Horizontal">
+                        <Image HeightRequest="25" WidthRequest="25" Source="Calender.png"/>
+                        <Label  HorizontalOptions="Start"
+                                                    VerticalOptions="Start"
+                                                    FontSize="Body"
+                                                    TextColor="#5f5d5e"
+                                                    Text="{Binding FullContent.Year}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                    <Image HeightRequest="25" WidthRequest="25" Source="Duration.png"/>
+                    <Label HorizontalOptions="Start"
+                                                   VerticalOptions="Start"
+                                                   FontSize="Body"
+                                                   TextColor="#5f5d5e"
+                                                   Text="{Binding FullContent.Runtime}"/>
+                    </StackLayout>
+                </StackLayout>
+                <Label Text="{Binding FullContent.Genre}" FontSize="20" FontAttributes="Bold" TextColor="Black"  HorizontalOptions="Start" VerticalOptions="Start"/>
+                <Label Text="{Binding FullContent.Plot}" FontSize="Subtitle" TextColor="#5f5d5e" HorizontalOptions="Start" VerticalOptions="Start"/>
+                <StackLayout Margin="0,15,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Button FontSize="15" HeightRequest="10" FontAttributes="Italic,Bold" WidthRequest="150" Text="WATCH NOW" TextColor="White" CornerRadius="32" BackgroundColor="HotPink"/>
+                    <Label Margin="9" VerticalOptions="Center" Text="+ Add to watchlist" TextColor="DeepPink"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
