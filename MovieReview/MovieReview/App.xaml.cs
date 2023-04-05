@@ -46,5 +46,6 @@ namespace MovieReview
             containerRegistry.RegisterForNavigation<Homepage, HomepageViewModel>();
             containerRegistry.RegisterForNavigation<DetailPage, DetailPageViewModel>();
         }
+//Adding commit
     }
 }
